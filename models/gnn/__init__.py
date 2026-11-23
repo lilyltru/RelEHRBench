@@ -1,0 +1,1 @@
+"""RelBench heterogeneous GNN baseline."""

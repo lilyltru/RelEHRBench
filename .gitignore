@@ -1,0 +1,30 @@
+# Generated datasets, training outputs, and logs
+/cache/
+/outputs/
+/logs/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Log
+*.log
+*.out
+*.err
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+
+# macOS metadata
+.DS_Store
+
+# Model checkpoints and datasets
+*.pth
+*.pt
+*.h5
+*.parquet
+*.ckpt

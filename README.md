@@ -21,6 +21,29 @@ We provide interoperable **RelBench** and **PyHealth** interfaces, enabling rela
 
 Our experiments show that **no model family dominates across tasks**: relational models perform best on readmission, phenotyping, and digestive-disease prediction, while sequential and tabular models lead on other tasks.
 
-## Code
 
-Code and benchmark construction scripts will be made public soon.
+## Requirements and access
+
+- **MIMIC-IV access.** Permission to query MIMIC-IV 2.2 in Google
+  BigQuery, Google Cloud Application Default Credentials, and a Google Cloud project ID is needed. Supply the ID as `--project-id` or set `PROJECT_ID`.
+- **Separate environments.** We used two separate environments.
+  - One `relbench` environment for data extraction, patient split generation, LightGBM, GraphSAGE, GAT, and RelGNN.
+  - One `pyhealth` environment for StageNet and Transformer.
+
+### Installation
+
+Please follow the upstream installation instructions of [RelBench](https://github.com/stanford-star/relbench) and [Pyhealth](https://pyhealth.readthedocs.io/en/latest/install.html). The
+full package snapshots are provided for reference.
+
+We used `relbench==2.1.1`, `google-cloud-bigquery==3.41.0`, and
+PyTorch `2.5.0+cu121` with CUDA 12.1 for **RelBench**.
+(Our [full package](requirements_relbench.txt) snapshot)
+
+We used `pyhealth==2.0.1` and PyTorch `2.7.1` with CUDA 12.6 for **PyHealth**.
+(Our [full package](requirements_pyhealth.txt) snapshot)
+
+## Reproduce main experiment results
+
+1. [Prepare the dataset and generate the shared patient split](data_pipeline/README.md#prepare-the-dataset-and-patient-split).
+2. Pass a [task](models/README.md#tasks) and run the corresponding [model training command](models/README.md#run-the-included-models-individually).
+

@@ -1,0 +1,92 @@
+{
+  "patients": {
+    "subject_id": "numerical",
+    "gender": "categorical",
+    "anchor_age": "numerical"
+  },
+  "admissions": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "admittime": "timestamp"
+  },
+  "admission_discharges": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "dischtime": "timestamp",
+    "discharge_location": "categorical"
+  },
+  "d_labitems": {
+    "itemid": "numerical",
+    "label": "text_embedded",
+    "fluid": "categorical",
+    "category": "categorical"
+  },
+  "labevents": {
+    "labevent_id": "numerical",
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "itemid": "numerical",
+    "lab_time": "timestamp",
+    "valuenum": "numerical",
+    "ref_range_lower": "numerical",
+    "ref_range_upper": "numerical",
+    "flag": "categorical"
+  },
+  "d_icd_diagnoses": {
+    "icd_code": "text_embedded",
+    "icd_version": "categorical",
+    "icd_code_version": "numerical",
+    "long_title": "text_embedded"
+  },
+  "diagnoses_icd": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "icd_code": "text_embedded",
+    "icd_version": "categorical",
+    "icd_code_version": "numerical",
+    "diagnosis_time": "timestamp"
+  },
+  "prescriptions": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "starttime": "timestamp",
+    "drug": "text_embedded"
+  },
+  "prescription_stops": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "stoptime": "timestamp",
+    "drug": "text_embedded"
+  },
+  "d_icd_procedures": {
+    "icd_code": "text_embedded",
+    "icd_version": "categorical",
+    "icd_code_version": "numerical",
+    "long_title": "text_embedded"
+  },
+  "procedures_icd": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "icd_code": "text_embedded",
+    "icd_version": "categorical",
+    "icd_code_version": "numerical",
+    "procedure_time": "timestamp"
+  },
+  "drgcodes": {
+    "subject_id": "numerical",
+    "hadm_id": "numerical",
+    "drg_type": "categorical",
+    "drg_code": "text_embedded",
+    "description": "text_embedded",
+    "drg_severity": "categorical",
+    "drg_mortality": "categorical",
+    "drg_time": "timestamp"
+  },
+  "omr": {
+    "subject_id": "numerical",
+    "omr_time": "timestamp",
+    "seq_num": "numerical",
+    "result_name": "text_embedded",
+    "result_value": "text_embedded"
+  }
+}

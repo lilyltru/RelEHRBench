@@ -1,0 +1,100 @@
+version: mimic-hosp-30k
+tables:
+  patients:
+    file_path: patients.parquet
+    patient_id: subject_id
+    timestamp: null
+    attributes:
+    - subject_id
+    - gender
+    - anchor_age
+  admissions:
+    file_path: admissions.parquet
+    patient_id: subject_id
+    timestamp: admittime
+    attributes:
+    - hadm_id
+    - admission_type
+    - admission_location
+    - insurance
+    - language
+    - marital_status
+    - race
+  admission_discharges:
+    file_path: admission_discharges.parquet
+    patient_id: subject_id
+    timestamp: dischtime
+    attributes:
+    - hadm_id
+    - discharge_location
+  diagnoses_icd:
+    file_path: diagnoses_icd.parquet
+    patient_id: subject_id
+    timestamp: diagnosis_time
+    attributes:
+    - hadm_id
+    - seq_num
+    - icd_code
+    - icd_version
+    - icd_code_version
+  procedures_icd:
+    file_path: procedures_icd.parquet
+    patient_id: subject_id
+    timestamp: procedure_time
+    attributes:
+    - hadm_id
+    - seq_num
+    - icd_code
+    - icd_version
+    - icd_code_version
+  prescriptions:
+    file_path: prescriptions.parquet
+    patient_id: subject_id
+    timestamp: starttime
+    attributes:
+    - hadm_id
+    - drug_type
+    - drug
+    - dose_val_rx
+    - dose_unit_rx
+    - doses_per_24_hrs
+    - route
+  prescription_stops:
+    file_path: prescription_stops.parquet
+    patient_id: subject_id
+    timestamp: stoptime
+    attributes:
+    - hadm_id
+    - drug
+  labevents:
+    file_path: labevents.parquet
+    patient_id: subject_id
+    timestamp: lab_time
+    attributes:
+    - hadm_id
+    - itemid
+    - valuenum
+    - valueuom
+    - ref_range_lower
+    - ref_range_upper
+    - flag
+    - priority
+  drgcodes:
+    file_path: drgcodes.parquet
+    patient_id: subject_id
+    timestamp: drg_time
+    attributes:
+    - hadm_id
+    - drg_type
+    - drg_code
+    - description
+    - drg_severity
+    - drg_mortality
+  omr:
+    file_path: omr.parquet
+    patient_id: subject_id
+    timestamp: omr_time
+    attributes:
+    - seq_num
+    - result_name
+    - result_value
