@@ -84,10 +84,7 @@ python -m models.pyhealth.train_stagenet --task "$TASK" --split-id "$SPLIT_ID" -
 python -m models.pyhealth.train_transformer --task "$TASK" --split-id "$SPLIT_ID" --split-protocol joint --lr 1e-3
 ```
 
-StageNet and Transformer print their test metrics to the terminal. Model
-caches and run outputs use these paths, where `<model>` is `lightgbm`, `gnn`,
-`relgnn`, `stagenet`, or `transformer`.
-
+Model caches and run outputs:
 ```text
 cache/<model>/<protocol>/<split_id>/<task>/...
 outputs/<model>/<protocol>/<split_id>/<task>/seed_<seed>/<run_id>/...
