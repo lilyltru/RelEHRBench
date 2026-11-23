@@ -45,6 +45,8 @@ The examples use 30-day readmission, the shared 80/10/10 split, the `joint`
 protocol, and the default model seed of 42. Use `--split-protocol patient` to
 run the patient-only protocol.
 
+The graph-based relational deep learning models use a heterogeneous graph, the sequential models use visit sequences, and LightGBM uses tabular features that summarize the available patient history.
+
 ### RelBench models
 
 Set `--gnn gat` in the GraphSAGE command to train GAT. LightGBM uses the
