@@ -7,26 +7,26 @@
 ## Overview
 RelEHRBench is a benchmark for **relational learning on longitudinal electronic health records**, derived from **MIMIC-IV**.
 
-Electronic health records are inherently longitudinal relational databases, linking patients to encounters and clinical events distributed across multiple tables. Existing benchmarks often reduce EHRs to isolated encounters or flattened event sequences, limiting comparisons between relational and conventional models.
+Electronic health records are inherently longitudinal relational databases, linking patients to encounters and clinical events distributed across multiple tables. Existing benchmarks often reduce EHRs to isolated encounters or flattened sequences, limiting comparisons between relational and conventional models.
 
 RelEHRBench preserves longitudinal histories, temporal validity, and native relational structure. It includes:
 
 * **30,000** adult patients
 * **65,007** hospitalizations
 * **13** interconnected tables
-* **15M+** temporally indexed records
+* **15M+** rows
 * **5** clinical prediction tasks
 
 We provide interoperable **RelBench** and **PyHealth** interfaces, enabling relational, sequential, and feature-engineered tabular models to be evaluated on identical cohorts, labels, and temporal cutoffs.
 
-Our experiments show that **no model family dominates across tasks**: relational models perform best on readmission, phenotyping, and digestive-disease prediction, while sequential and tabular models lead on other tasks.
+Our controlled experiments show that **no model family dominates across tasks**: relational models perform best on readmission, phenotyping, and digestive-disease prediction, while sequential and tabular models lead on other tasks.
 
 
 ## Requirements and access
 
 - **MIMIC-IV access.** Permission to query MIMIC-IV 2.2 in Google
   BigQuery, Google Cloud Application Default Credentials, and a Google Cloud project ID is needed. Supply the ID as `--project-id` or set `PROJECT_ID`.
-- **Separate environments.** We used two separate environments.
+- **Separate environments.** We used two separate Python 3.12 environments.
   - One `relbench` environment for data extraction, patient split generation, LightGBM, GraphSAGE, GAT, and RelGNN.
   - One `pyhealth` environment for StageNet and Transformer.
 
